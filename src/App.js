@@ -1,33 +1,41 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
-import Amplify from 'aws-amplify';
-import aws_exports from './aws-exports';
-Amplify.configure(aws_exports);
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <AmplifySignOut />
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+import Files from './components/Files'
+import Admin from './components/Admin'
+
+const Navigation = () => {
+  return (
+    <>
+      <Navbar collapseOnSelect fixed="top" expand="sm" bg="dark" variant="dark">
+        <Container>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav>
+              <Nav.Link href="/">Files</Nav.Link>
+              <Nav.Link href="/Admin">Admin</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </>
+  );
 }
 
-export default withAuthenticator(App);
+export default class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          <Navigation />
+          <Switch>
+            <Route exact path="/" component={Files}></Route>
+            <Route path="/admin" component={Admin}></Route>
+          </Switch>
+        </div>
+      </Router>
+    )
+  }
+}
