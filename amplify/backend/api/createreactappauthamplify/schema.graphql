@@ -1,0 +1,19 @@
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  firstName: String
+  lastName: String
+  created: AWSDateTime
+  Files: [File] @connection(keyName: "byUser", fields: ["id"])
+  updated: AWSDateTime
+}
+
+type File @model @auth(rules: [{allow: public}]) @key(name: "byUser", fields: ["userID"]) {
+  id: ID!
+  name: String
+  type: String
+  size: Int
+  created: AWSDateTime
+  updated: AWSDateTime
+  userID: ID
+}
+ 

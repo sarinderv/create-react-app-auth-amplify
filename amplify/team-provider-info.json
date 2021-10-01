@@ -14,6 +14,12 @@
     "categories": {
       "auth": {
         "cognitocf0c6096": {}
+      },
+      "function": {
+        "S3Trigger4c8a18ac": {
+          "deploymentBucketName": "amplify-authcra-devn-50812-deployment",
+          "s3Key": "amplify-builds/S3Trigger4c8a18ac-5037567a6c70424f4a62-build.zip"
+        }
       }
     }
   }
