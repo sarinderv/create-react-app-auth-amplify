@@ -32,7 +32,12 @@ export default class Files extends Component {
 
         Storage.put(this.state.selectedFile.name, this.state.selectedFile, {
             level: 'private',
-            contentType: this.state.selectedFile.type
+            contentType: this.state.selectedFile.type,
+            metadata: {
+                'fileName': this.state.selectedFile.name,
+                'firstName': 'Bob',
+                'lastName': 'Virk',
+            }
         })
         .then (result => console.log(result))
         .catch(err => console.log(err));

@@ -1,0 +1,7 @@
+{
+    "tableName": "FileMetadata",
+    "partitionKeyName": "id",
+    "partitionKeyType": "S",
+    "sortKeyName": "fileName",
+    "sortKeyType": "S"
+}

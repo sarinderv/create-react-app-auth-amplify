@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "storage": {
+      "File:@model(appsync)": [
+        "create",
+        "update"
+      ]
+    }
+  },
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "envVarTest1",
+      "environmentVariableName": "EnvVarTest1"
+    }
+  ],
+  "secretNames": [
+    "SecretKey1"
+  ]
+}

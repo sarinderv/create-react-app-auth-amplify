@@ -37,6 +37,36 @@
     "S3Trigger4c8a18ac": {
       "service": "Lambda",
       "providerPlugin": "awscloudformation",
+      "build": true,
+      "dependsOn": [
+        {
+          "category": "api",
+          "resourceName": "createreactappauthamplify",
+          "attributes": [
+            "GraphQLAPIIdOutput"
+          ]
+        }
+      ]
+    },
+    "dynamoFileMetadataTriggerbd2d81e9": {
+      "service": "Lambda",
+      "providerPlugin": "awscloudformation",
+      "build": true,
+      "dependsOn": [
+        {
+          "category": "storage",
+          "resourceName": "dynamoFileMetadata",
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ]
+        }
+      ]
+    },
+    "createreactappauthams3Create": {
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer",
       "build": true
     }
   },
@@ -55,6 +85,10 @@
           ]
         }
       ]
+    },
+    "dynamoFileMetadata": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation"
     }
   }
 }
