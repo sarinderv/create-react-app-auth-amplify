@@ -18,7 +18,7 @@
       "function": {
         "S3Trigger4c8a18ac": {
           "deploymentBucketName": "amplify-authcra-devn-50812-deployment",
-          "s3Key": "amplify-builds/S3Trigger4c8a18ac-6f74676d3849546d754d-build.zip",
+          "s3Key": "amplify-builds/S3Trigger4c8a18ac-345963354c2b50356976-build.zip",
           "envVarTest1": "Test1Value",
           "secretsPathAmplifyAppId": "d1sy1y8eabt3ra"
         },
@@ -28,7 +28,7 @@
         },
         "createreactappauthams3Create": {
           "deploymentBucketName": "amplify-authcra-devn-50812-deployment",
-          "s3Key": "amplify-builds/createreactappauthams3Create-LambdaLayerVersion05795b3c-build.zip"
+          "s3Key": "amplify-builds/createreactappauthams3Create-LambdaLayerVersion8bb0efbf-build.zip"
         }
       }
     }
