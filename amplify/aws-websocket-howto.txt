@@ -1,0 +1,17 @@
+1. client opens websocket: /Users/savirk/.npm-packages/bin/wscat -c wss://4l3zu1gy6h.execute-api.us-west-2.amazonaws.com/devn 
+
+2. find the client connectionid: > t
+< {"message": "Internal server error", "connectionId":"HBxzscibvHcCGFQ=", "requestId":"HBx27EdrvHcFgFQ="}
+
+3. server sends client a message:
+awscurl --service execute-api -X POST -d "hello world2" https://4l3zu1gy6h.execute-api.us-west-2.amazonaws.com/devn/%40connections/HBxzscibvHcCGFQ= -v
+
+'\nHEADERS++++++++++++++++++++++++++++++++++++'
+{'Accept': 'application/xml', 'Content-Type': 'application/json', 'Authorization': 'AWS4-HMAC-SHA256 Credential=AKIASEMCAQ3I7M7OLVXP/20211011/us-west-2/execute-api/aws4_request, SignedHeaders=host;x-amz-date, Signature=20ff93905aef98a2386f5d8ed1e56361fcbee4b74d730e75a1d17b2b64d0d90f', 'x-amz-date': '20211011T052243Z', 'x-amz-security-token': None, 'x-amz-content-sha256': 'f93c20b30171d10e773dc2a2d8ed59524b25baddf381b83fcc4ec40f50bedb33'}
+'\nBEGIN REQUEST++++++++++++++++++++++++++++++++++++'
+('Request URL = '
+ 'https://4l3zu1gy6h.execute-api.us-west-2.amazonaws.com/devn/%40connections/HBxzscibvHcCGFQ=')
+'\nRESPONSE++++++++++++++++++++++++++++++++++++'
+'Response code: 200\n'
+{'Date': 'Mon, 11 Oct 2021 05:22:44 GMT', 'Content-Type': 'application/json', 'Content-Length': '0', 'Connection': 'keep-alive', 'x-amzn-RequestId': 'bd78021b-df07-4baa-8024-bb80c7545927', 'x-amz-apigw-id': 'HByFsFL0PHcFu2w=', 'X-Amzn-Trace-Id': 'Root=1-6163ca24-34d1871e2886fc9d3d7206b3'}
+
