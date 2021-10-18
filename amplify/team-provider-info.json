@@ -28,7 +28,7 @@
         },
         "createreactappauthams3Create": {
           "deploymentBucketName": "amplify-authcra-devn-50812-deployment",
-          "s3Key": "amplify-builds/createreactappauthams3Create-LambdaLayerVersion3f5e9c0f-build.zip"
+          "s3Key": "amplify-builds/createreactappauthams3Create-LambdaLayerVersiondce16327-build.zip"
         },
         "fileapigwlambda": {
           "deploymentBucketName": "amplify-authcra-devn-50812-deployment",
